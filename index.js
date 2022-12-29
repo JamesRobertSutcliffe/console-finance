@@ -87,9 +87,18 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-console.log(finances[0][0])
 
-// CREATE for loop - loop through using above synax ([x][0].amount?)
+// Number of date entries
+console.log(finances.length)
 
-// display amount of monthly entries
+// isolate numbers only to work out profit / loss
+
+for (x = 0; x < finances.length; x++) {
+    console.log(finances[x][0])
+}
+
+// then add all of these values together to work out net profit or loss?
+
+
+
 
