@@ -93,9 +93,11 @@ console.log(finances.length)
 
 // isolate numbers only to work out profit / loss
 
+let financeValue = 0;
 for (x = 0; x < finances.length; x++) {
-    console.log(finances[x][0])
-}
+    financeValue = finances[x][1];
+    console.log(financeValue);
+};
 
 // then add all of these values together to work out net profit or loss?
 
