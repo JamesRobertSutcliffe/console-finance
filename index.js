@@ -88,18 +88,31 @@ var finances = [
 ];
 
 
-// Number of date entries
-console.log(finances.length)
+// * The total number of months included in the dataset.
 
-// isolate numbers only to work out profit / loss
+console.log(finances.length);
 
-let financeValue = 0;
+// The net total amount of Profit/Losses over the entire period.
+
+let financeValuesArray = [];
+let sum = 0;
+
 for (x = 0; x < finances.length; x++) {
-    financeValue = finances[x][1];
-    console.log(financeValue);
+    financeValuesArray.push(finances[x][1]);
 };
 
-// then add all of these values together to work out net profit or loss?
+for (i = 0; i < financeValuesArray.length; i++){
+    sum += parseInt(financeValuesArray[i]);
+  }
+
+const netTotal = sum / 36;
+
+console.log(netTotal);
+
+// * The average of the **changes** in Profit/Losses over the entire period.
+//   * You will need to track what the total change in profits are from month to month and then find the average.
+//   * (`Total/Number of months`)
+
 
 
 
