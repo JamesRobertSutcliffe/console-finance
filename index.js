@@ -94,24 +94,22 @@ console.log(finances.length);
 
 // The net total amount of Profit/Losses over the entire period.
 
-let financeValuesArray = [];
-let sum = 0;
+let financesValuesSum = 0;
 
 for (x = 0; x < finances.length; x++) {
-    financeValuesArray.push(finances[x][1]);
+    financesValuesSum += parseInt(finances[x][1]);
 };
 
-for (i = 0; i < financeValuesArray.length; i++){
-    sum += parseInt(financeValuesArray[i]);
-  }
-
-const netTotal = sum / 36;
-
-console.log(netTotal);
+console.log(financesValuesSum);
 
 // * The average of the **changes** in Profit/Losses over the entire period.
 //   * You will need to track what the total change in profits are from month to month and then find the average.
 //   * (`Total/Number of months`)
+
+const netTotal = financesValuesSum / 36;
+console.log(netTotal);
+
+// * The greatest increase in profits (date and amount) over the entire period.
 
 
 
