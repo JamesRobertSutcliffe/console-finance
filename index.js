@@ -107,19 +107,29 @@ console.log(financesValuesSum);
 //   * You will need to track what the total change in profits are from month to month and then find the average.
 //   * (`Total/Number of months`)
 
-const netTotal = financesValuesSum / monthsTotal;
-console.log(Math.floor(netTotal));
+const netTotalSum = financesValuesSum / monthsTotal;
+const netTotal = Math.floor(netTotalSum)
+console.log(netTotal);
 
 // * The greatest increase in profits (date and amount) over the entire period.
 
-
+let maxIncreaseFull = [];
+let maxIncrease = 0;
 let financesValuesArray = []
 for (j = 0; j < finances.length; j++){
-    financesValuesArray.push(finances[j][1]);     
-};
+    financesValuesArray.push(finances[j][1]);
+    maxIncrease = (Math.max(...financesValuesArray));
+    if (finances[j][1] === maxIncrease){
+ maxIncreaseFull.push(finances[j])
+}};
 
-const maxIncrease = (Math.max(financesValuesArray[1]));
-console.log(maxIncrease);
+const greatestIncrease = maxIncreaseFull.pop();
+console.log(greatestIncrease);
+
+document.getElementById('test').innerHTML = greatestIncrease;
+
+// * The greatest decrease in losses (date and amount) over the entire period.
+
 
 
 
