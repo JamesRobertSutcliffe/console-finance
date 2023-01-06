@@ -91,7 +91,7 @@ var finances = [
 // * The total number of months included in the dataset.
 
 const monthsTotal = finances.length;
-console.log(monthsTotal);
+console.log(`The total number of months is ${monthsTotal}`);
 
 // The net total amount of Profit/Losses over the entire period.
 
@@ -101,7 +101,7 @@ for (x = 0; x < finances.length; x++) {
     financesValuesSum += parseInt(finances[x][1]);
 };
 
-console.log(financesValuesSum);
+console.log(`The net total amount of Profit/Losses over the entire period ${financesValuesSum}`);
 
 // * The average of the **changes** in Profit/Losses over the entire period.
 //   * You will need to track what the total change in profits are from month to month and then find the average.
@@ -109,7 +109,7 @@ console.log(financesValuesSum);
 
 const netTotalSum = financesValuesSum / monthsTotal;
 const netTotal = Math.floor(netTotalSum)
-console.log(netTotal);
+console.log(`The average of the **changes** in Profit/Losses over the entire period is ${netTotal}`);
 
 // * The greatest increase in profits (date and amount) over the entire period.
 
@@ -124,13 +124,43 @@ for (j = 0; j < finances.length; j++){
 }};
 
 const greatestIncrease = maxIncreaseFull.pop();
-console.log(greatestIncrease);
-
-document.getElementById('test').innerHTML = greatestIncrease;
+console.log(`The greatest increase in profits (date and amount) over the entire period is ${greatestIncrease}`);
 
 // * The greatest decrease in losses (date and amount) over the entire period.
 
+let maxDecreaseFull = [];
+let maxDecrease = 0;
+let financesValuesArray2 = []
+for (k = 0; k < finances.length; k++){
+    financesValuesArray2.push(finances[k][1]);
+    maxDecrease = (Math.min(...financesValuesArray2));
+    if (finances[k][1] === maxDecrease){
+ maxDecreaseFull.push(finances[k])
+}};
 
+const greatestDecrease = maxDecreaseFull.pop();
+console.log(`The greatest decrease in losses (date and amount) over the entire period is ${greatestDecrease}`);
+
+
+
+console.log(
+    `  Financial Analysis
+    ----------------------------
+    Total Months: £${monthsTotal}
+    Total: £${financesValuesSum}
+    Average  Change: £${netTotal}
+    Greatest Increase in Profits: ${greatestIncrease}
+    Greatest Decrease in Profits: ${greatestDecrease}`
+)
+
+document.getElementById('text').innerHTML =  
+`  Financial Analysis <br>
+---------------------------- <br>
+Total Months: £${monthsTotal} <br>
+Total: £${financesValuesSum} <br>
+Average  Change: £${netTotal} <br>
+Greatest Increase in Profits: ${greatestIncrease} <br>
+Greatest Decrease in Profits: ${greatestDecrease}`;
 
 
 
