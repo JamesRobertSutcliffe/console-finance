@@ -146,7 +146,7 @@ console.log(`The greatest decrease in losses (date and amount) over the entire p
 console.log(
     `  Financial Analysis
     ----------------------------
-    Total Months: £${monthsTotal}
+    Total Months: ${monthsTotal}
     Total: £${financesValuesSum}
     Average  Change: £${netTotal}
     Greatest Increase in Profits: ${greatestIncrease}
